@@ -1,0 +1,218 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(39, 39, 39);
+    color: #fff;
+}
+
+.container {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.information {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.drawing {
+    position: relative;
+}
+
+.first {
+    height: 50px;
+    width: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.second {
+    margin-left: 120px;
+    height: 10px;
+    width: 200px;
+    background-color: #fff;
+}
+
+.third {
+    margin-left: 120px;
+    height: 400px;
+    width: 10px;
+    background-color: #fff;
+}
+
+.fourth {
+    height: 10px;
+    width: 250px;
+    background-color: #fff;
+}
+
+
+/*  hangman body  */
+
+.head {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 10px solid #fff;
+    position: absolute;
+    top: 50px;
+    right: -30px;
+}
+
+.body {
+    width: 10px;
+    height: 100px;
+    background-color: #fff;
+    position: absolute;
+    top: 120px;
+    right: 0;
+}
+
+.right_arm {
+    width: 100px;
+    height: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 150px;
+    right: -100px;
+    rotate: -30deg;
+    transform-origin: left bottom;
+}
+
+.left_arm {
+    width: 100px;
+    height: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 150px;
+    right: 10px;
+    rotate: 30deg;
+    transform-origin: right bottom;
+}
+
+.right_leg {
+    width: 100px;
+    height: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 210px;
+    right: -90px;
+    rotate: 60deg;
+    transform-origin: left bottom;
+}
+
+.left_leg {
+    width: 100px;
+    height: 10px;
+    background-color: #fff;
+    position: absolute;
+    top: 210px;
+    right: 0;
+    rotate: -60deg;
+    transform-origin: right bottom;
+}
+
+
+/* HangmanWord */
+
+.word {
+    display: flex;
+    gap: .25em;
+    font-size: 6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: monospace;
+}
+
+.singleLetter {
+    border-bottom: 0.1em solid #fff;
+}
+
+
+/* KEYBOARD */
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+    gap: 0.6rem;
+}
+
+.letter {
+    border: 3px solid white;
+    outline: none;
+    background: transparent;
+    color: white;
+    text-transform: uppercase;
+    aspect-ratio: 1 / 1;
+    font-size: 2.5rem;
+    padding: 0.25em;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.letter:hover:not(:disabled),
+.letter:focus:not(:disabled) {
+    background-color: hsl(120, 100%, 50%);
+    color: #000;
+}
+
+.letter.active {
+    background-color: aqua;
+}
+
+.letter.inactive {
+    opacity: 0.3;
+}
+
+.refreshButton {
+    appearance: none;
+    background-color: #000000;
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 60px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+    will-change: transform;
+}
+
+.refreshButton:disabled {
+    pointer-events: none;
+}
+
+.refreshButton:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.refreshButton:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+h1 {
+    color: transparent;
+}
